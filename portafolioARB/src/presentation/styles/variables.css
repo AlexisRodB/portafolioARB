@@ -1,0 +1,17 @@
+:root {
+  /* Paleta provisional Cyberpunk: se ajustará con el diseño final */
+  --color-bg: #0a0e27;
+  --color-bg-alt: #111633;
+  --color-surface: #161b3d;
+  --color-primary: #00b4ff; /* azul eléctrico */
+  --color-secondary: #a855f7; /* morado neón */
+  --color-text: #e6e9ff;
+  --color-text-muted: #9aa3d1;
+
+  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --glow-primary: 0 0 12px rgba(0, 180, 255, 0.5);
+  --glow-secondary: 0 0 12px rgba(168, 85, 247, 0.5);
+
+  --header-height: 4.5rem;
+}
