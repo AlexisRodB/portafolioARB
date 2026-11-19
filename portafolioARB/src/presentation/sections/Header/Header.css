@@ -1,0 +1,199 @@
+/* Contenedor fijo: solo centra la píldora y deja pasar los clics alrededor */
+.site-header {
+  position: fixed;
+  top: 0.75rem;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  pointer-events: none;
+}
+
+/* La píldora */
+.site-header__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  min-height: 3.5rem;
+  padding: 0.4rem 0.5rem 0.4rem 1.5rem;
+  background: rgba(6, 10, 28, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 180, 255, 0.25);
+  border-radius: 999px;
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.4),
+    0 0 18px rgba(0, 180, 255, 0.12);
+  pointer-events: auto;
+}
+
+/* Logo */
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand__name {
+  font-family: var(--font-script);
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 1;
+  background: linear-gradient(90deg, #00b4ff, #a855f7, #ff4fd8, #00e5ff, #00b4ff);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 8px rgba(0, 180, 255, 0.45));
+  animation: brand-colors 6s linear infinite;
+}
+
+@keyframes brand-colors {
+  to {
+    background-position: 100% 0;
+  }
+}
+
+/* Navegación (escritorio) */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.site-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav__link {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-primary);
+  box-shadow: var(--glow-primary);
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+
+.site-nav__link:hover,
+.site-nav__link.is-active {
+  color: #fff;
+}
+
+.site-nav__link:hover::after,
+.site-nav__link.is-active::after {
+  transform: scaleX(1);
+}
+
+.site-nav__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.25rem;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(0, 180, 255, 0.1);
+  border: 1px solid rgba(0, 180, 255, 0.45);
+  border-radius: 999px;
+  transition:
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.site-nav__cta:hover {
+  color: #fff;
+  background: rgba(0, 180, 255, 0.2);
+  box-shadow: var(--glow-primary);
+}
+
+/* Botón hamburguesa */
+.site-header__toggle {
+  display: none;
+  padding: 0.4rem 0.6rem;
+  color: var(--color-text);
+  font-size: 1.6rem;
+  line-height: 1;
+  background: none;
+  border: 0;
+  border-radius: 999px;
+}
+
+/* Móvil y tablet */
+@media (max-width: 991.98px) {
+  .site-header__inner {
+    width: 100%;
+    max-width: 36rem;
+  }
+
+  .site-header__toggle {
+    display: block;
+  }
+
+  /* Menú desplegable: tarjeta redondeada bajo la píldora */
+  .site-nav {
+    position: absolute;
+    top: calc(100% + 0.6rem);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: rgba(6, 10, 28, 0.96);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 180, 255, 0.25);
+    border-radius: 1.75rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .site-nav__cta {
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand__name {
+    animation: none;
+  }
+
+  .site-nav__link::after,
+  .site-nav__cta {
+    transition: none;
+  }
+}

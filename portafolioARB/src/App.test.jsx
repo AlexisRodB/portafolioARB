@@ -5,6 +5,6 @@ import App from './App.jsx';
 describe('App', () => {
   it('muestra el título del portafolio', () => {
     render(<App />);
-    expect(screen.getByRole('heading', { name: 'AlexHousky' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Alexis' })).toBeInTheDocument();
   });
 });

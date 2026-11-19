@@ -8,7 +8,8 @@
   --color-text: #e6e9ff;
   --color-text-muted: #9aa3d1;
 
-  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-script: 'Dancing Script', cursive;
 
   --glow-primary: 0 0 12px rgba(0, 180, 255, 0.5);
   --glow-secondary: 0 0 12px rgba(168, 85, 247, 0.5);

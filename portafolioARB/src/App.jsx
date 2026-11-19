@@ -1,8 +1,23 @@
+import { SECTION_ORDER } from '@/config/navigation';
+import { Header } from '@/presentation/sections';
+
 function App() {
   return (
-    <main className="container py-5">
-      <h1>Portafolio</h1>
-    </main>
+    <>
+      <Header />
+      <main>
+        {SECTION_ORDER.map((id, index) => (
+          <section
+            key={id}
+            id={id}
+            className="container"
+            style={{ minHeight: '100vh', paddingTop: 'calc(var(--header-height) + 2rem)' }}
+          >
+            {index === 0 ? <h1>AlexHousky</h1> : <h2>{id}</h2>}
+          </section>
+        ))}
+      </main>
+    </>
   );
 }
 
