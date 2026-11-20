@@ -30,7 +30,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "test": "vitest",
-    "test:run": "vitest run",
+    "test:run": "npm --prefix ./portafolioARB run test:run",
     "format": "prettier --write ."
   }
 }

@@ -1,5 +1,5 @@
 import { SECTION_ORDER } from '@/config/navigation';
-import { Header, Hero } from '@/presentation/sections';
+import { About, Header, Hero } from '@/presentation/sections';
 
 function App() {
   return (
@@ -7,8 +7,9 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <About />
         {/* Relleno temporal*/}
-        {SECTION_ORDER.slice(1).map((id) => (
+        {SECTION_ORDER.slice(2).map((id) => (
           <section
             key={id}
             id={id}

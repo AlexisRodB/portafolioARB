@@ -213,11 +213,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0, 10, 40, 0.18) 0 1px,
-    transparent 1px 3px
-  );
+  background: repeating-linear-gradient(0deg, rgba(0, 10, 40, 0.18) 0 1px, transparent 1px 3px);
   pointer-events: none;
 }
 
