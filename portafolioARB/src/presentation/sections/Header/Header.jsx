@@ -16,7 +16,7 @@ function Header() {
     <header className="site-header">
       <div className="site-header__inner">
         <a href="#inicio" className="brand" onClick={closeMenu} aria-label="Alexis, ir al inicio">
-            <span className="brand__name">Alexis</span>
+          <span className="brand__name">Alexis</span>
         </a>
 
         <button

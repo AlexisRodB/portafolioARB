@@ -10,6 +10,7 @@
 
   --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-script: 'Dancing Script', cursive;
+  --font-display: 'Rajdhani', 'Inter', sans-serif;
 
   --glow-primary: 0 0 12px rgba(0, 180, 255, 0.5);
   --glow-secondary: 0 0 12px rgba(168, 85, 247, 0.5);
